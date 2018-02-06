@@ -35,14 +35,14 @@ bool isMatch(char* s, char* p) {
             }
         }
         if (currentWord == '\0') {
-            return currentPattern == '\0' || currentPattern == '*';
+            return currentPattern == '\0' || currentPattern == '*' || currentPattern == lastPattern;
         }
     }
     return currentWord == '\0';
 }
 
 int main() {
-    if (isMatch("aaa", "a*a")) {
+    if (isMatch("aaa", "ab*a*c*a")) {
         printf("true\n");
     } else {
         printf("false\n");
