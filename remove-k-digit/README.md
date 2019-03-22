@@ -18,7 +18,7 @@
 
 下图表示挑选的过程。`total`表示字符串`num`的长度，`number`字符串表示被挑选出的最小n位数。
 
-![remove k digits](https://raw.githubusercontent.com/Zhan-Jie/Zhan-Jie.github.io/master/images/remove-k-digits.PNG)
+![remove k digits](https://raw.githubusercontent.com/Zhan-Jie/images/master/remove-k-digits.PNG)
 
 假设现在已经有i位数被挑选出来，`num`字符串中的`j-1`位置是上一个被挑选出的数字（那么`number[i-1]=num[j-1]`）。那么挑选出下一个数字，只需要从`j`位置开始从后查找出最小的字符，并赋值给`number[i]`就可以。挑选过程中，如果发现`j`位置右边的字符数和`i`位置右边的字符数一样多，就没有必要再往后查了，这时候直接将`j`位置开始的字符序列复制到`i`位置及之后。所以从`j`位置开始查询时，右边应该有一个边界，可以求出这个边界的位置是`k+i`。
 
